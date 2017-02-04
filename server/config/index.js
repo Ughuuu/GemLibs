@@ -10,4 +10,3 @@ class SetupConfig {
 }
 exports.SetupConfig = SetupConfig;
 ;
-//# sourceMappingURL=index.js.map

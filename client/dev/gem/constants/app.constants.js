@@ -10,4 +10,3 @@ NavbarConstants.featureButton = "Features";
 NavbarConstants.signupButton = "Sign Up";
 NavbarConstants.loginButton = "Log In";
 exports.NavbarConstants = NavbarConstants;
-//# sourceMappingURL=app.constants.js.map

@@ -1,0 +1,1 @@
+"use strict";function _classCallCheck(s,t){if(!(s instanceof t))throw new TypeError("Cannot call a class as a function")}var Plugin=function s(t,n,i,a,e,c){_classCallCheck(this,s),this.id=t,this.name=n,this.version=i,this.createdAt=a,this.content=e,this.username=c};exports.Plugin=Plugin;

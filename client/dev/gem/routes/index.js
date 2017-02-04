@@ -11,4 +11,3 @@ exports.AppRoutes = [
     { path: 'plugin/:user/:plugin', component: plugin_component_1.PluginComponent },
     { path: '**', component: home_component_1.HomeComponent }
 ];
-//# sourceMappingURL=index.js.map

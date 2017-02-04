@@ -75,4 +75,3 @@ class DataBaseConfig {
 }
 exports.DataBaseConfig = DataBaseConfig;
 ;
-//# sourceMappingURL=database.conf.js.map

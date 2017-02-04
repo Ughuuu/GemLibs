@@ -28,4 +28,3 @@ class PublicRoutes {
 }
 exports.PublicRoutes = PublicRoutes;
 ;
-//# sourceMappingURL=public.routes.js.map

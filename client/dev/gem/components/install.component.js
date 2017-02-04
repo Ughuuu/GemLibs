@@ -29,4 +29,3 @@ InstallComponent = __decorate([
     __metadata("design:paramtypes", [])
 ], InstallComponent);
 exports.InstallComponent = InstallComponent;
-//# sourceMappingURL=install.component.js.map

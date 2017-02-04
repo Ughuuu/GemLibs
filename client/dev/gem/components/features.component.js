@@ -21,4 +21,3 @@ FeaturesComponent = __decorate([
     __metadata("design:paramtypes", [])
 ], FeaturesComponent);
 exports.FeaturesComponent = FeaturesComponent;
-//# sourceMappingURL=features.component.js.map

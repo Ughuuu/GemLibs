@@ -1,0 +1,1 @@
+"use strict";function _classCallCheck(s,n){if(!(s instanceof n))throw new TypeError("Cannot call a class as a function")}var LoginConstants=function s(){_classCallCheck(this,s)};LoginConstants.userPlacehoder="Username",LoginConstants.passwordPlaceholder="Password",exports.LoginConstants=LoginConstants;

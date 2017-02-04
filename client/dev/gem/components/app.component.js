@@ -67,4 +67,3 @@ AppComponent = __decorate([
     __metadata("design:paramtypes", [router_1.Router, platform_browser_1.Title, material_1.MdDialog])
 ], AppComponent);
 exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map

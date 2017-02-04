@@ -14,4 +14,3 @@ class AppRoutes {
 }
 exports.AppRoutes = AppRoutes;
 ;
-//# sourceMappingURL=app.routes.js.map

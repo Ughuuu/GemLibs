@@ -1,0 +1,1 @@
+"use strict";function _classCallCheck(s,t){if(!(s instanceof t))throw new TypeError("Cannot call a class as a function")}var User=function s(t,a,e,i){_classCallCheck(this,s),this.id=t,this.username=a,this.email=e,this.createdAt=i};exports.User=User;

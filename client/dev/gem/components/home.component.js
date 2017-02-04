@@ -49,4 +49,3 @@ HomeComponent = __decorate([
     __metadata("design:paramtypes", [router_1.Router, platform_browser_1.Title, material_1.MdDialog])
 ], HomeComponent);
 exports.HomeComponent = HomeComponent;
-//# sourceMappingURL=home.component.js.map

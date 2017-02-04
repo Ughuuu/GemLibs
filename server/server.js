@@ -15,4 +15,3 @@ http.createServer(app)
     .listen(app_const_1.AppConstants.port, () => {
     console.log('Started running @: ' + os.hostname() + ' on port: ' + app_const_1.AppConstants.port + ' with environment: ' + process.env.NODE_ENV);
 });
-//# sourceMappingURL=server.js.map

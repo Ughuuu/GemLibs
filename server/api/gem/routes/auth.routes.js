@@ -66,4 +66,3 @@ AuthRoutes.isAuthenticated = function (req, res, next) {
 };
 exports.AuthRoutes = AuthRoutes;
 ;
-//# sourceMappingURL=auth.routes.js.map

@@ -51,4 +51,3 @@ SignUpComponent = __decorate([
     __metadata("design:paramtypes", [http_1.Http, material_1.MdDialog, forms_1.FormBuilder])
 ], SignUpComponent);
 exports.SignUpComponent = SignUpComponent;
-//# sourceMappingURL=signup.component.js.map

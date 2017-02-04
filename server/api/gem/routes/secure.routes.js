@@ -7,4 +7,3 @@ class SecureRoutes {
 }
 exports.SecureRoutes = SecureRoutes;
 ;
-//# sourceMappingURL=secure.routes.js.map

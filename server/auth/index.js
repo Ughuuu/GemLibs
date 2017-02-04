@@ -31,4 +31,3 @@ class Authentificator {
     }
 }
 exports.Authentificator = Authentificator;
-//# sourceMappingURL=index.js.map

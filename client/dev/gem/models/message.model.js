@@ -8,4 +8,3 @@ class Message {
     }
 }
 exports.Message = Message;
-//# sourceMappingURL=message.model.js.map

@@ -27,4 +27,3 @@ GuardService = __decorate([
     __metadata("design:paramtypes", [router_1.Router])
 ], GuardService);
 exports.GuardService = GuardService;
-//# sourceMappingURL=guard.service.js.map

@@ -49,4 +49,3 @@ LoginComponent = __decorate([
     __metadata("design:paramtypes", [router_1.Router, http_1.Http, material_1.MdDialog, forms_1.FormBuilder])
 ], LoginComponent);
 exports.LoginComponent = LoginComponent;
-//# sourceMappingURL=login.component.js.map
