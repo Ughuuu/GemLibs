@@ -1,8 +1,9 @@
 "use strict";
 function default_1(orm, db) {
     var Plugin = db.define('plugin', {
-        name: { type: 'text', required: true },
+        name: { type: 'text', required: true, unique: true },
         version: { type: 'text', required: true },
+        createdAt: { type: 'date', required: true, time: true }
     }, {
         hooks: {
             beforeValidation: function () {
@@ -14,15 +15,27 @@ function default_1(orm, db) {
         },
         methods: {
             serialize: function () {
-                return {
-                    name: this.name,
-                    version: this.version,
-                };
+                var plugin = this;
+                return new Promise((done, rejected) => {
+                    plugin.getMessage((err, msg) => {
+                        if (err) {
+                            console.log(err);
+                            rejected(err);
+                            return;
+                        }
+                        done({
+                            name: plugin.name,
+                            content: msg.content,
+                            version: plugin.version,
+                        });
+                    });
+                });
             }
         }
     });
-    Plugin.hasOne('message', db.models.message, { required: true });
+    Plugin.hasOne('message', db.models.message);
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = default_1;
 ;
+//# sourceMappingURL=plugin.model.js.map

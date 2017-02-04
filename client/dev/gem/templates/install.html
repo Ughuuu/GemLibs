@@ -1,0 +1,30 @@
+<md-grid-list cols="12" [style.background]="'#8585cc'" rowHeight="256px">
+    <md-grid-tile colspan="12">
+        <span mdTooltip="From Mirror">
+            <a md-button (click)='downloadPage()'>
+                <img src='{{logo}}' width="128" height="128">
+                <h1>Download Java Binary 0.1 As Zip</h1>
+            </a>
+          </span>
+    </md-grid-tile>
+</md-grid-list>
+<md-grid-list cols="12" [style.background]="'#7A257C'" rowHeight="256px">
+    <md-grid-tile colspan="12">
+        <span mdTooltip="From Github">
+            <a md-button (click)='sourcePage()'>
+                <img src='{{logo}}' width="128" height="128">
+                <h1>Download Source Code</h1>
+            </a>
+          </span>
+    </md-grid-tile>
+</md-grid-list>
+<md-grid-list cols="12" [style.background]="'#8585cc'" rowHeight="64px">
+    <md-grid-tile colspan="12">
+        <h3>You just extract it and run it!</h3>
+    </md-grid-tile>
+    <md-grid-tile colspan="12">
+        <h3>Boy, isn't that easy?</h3>
+    </md-grid-tile>
+</md-grid-list>
+<md-grid-list cols="12" [style.background]="'#8585cc'" rowHeight="256px">
+</md-grid-list>

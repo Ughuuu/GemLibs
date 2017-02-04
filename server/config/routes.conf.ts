@@ -6,8 +6,7 @@ import * as bodyParser from 'body-parser';
 import * as helmet from 'helmet';
 import * as compression from 'compression';
 var zlib = require('zlib');
-import { DBConfig } from './db.conf';
-import { AppConstants } from '../constants/app.constants';
+import { AppConstants } from '../constants/app.const';
 
 export class RoutesConfig {
     static init(app: express.Application): void {
@@ -22,6 +21,7 @@ export class RoutesConfig {
         app.use(express.static(_root + _nodeModules));
         app.use(express.static(_root + AppConstants.clientFiles));
         app.use(bodyParser.json());
+        app.use(bodyParser.urlencoded({ extended: true }));
         app.use(morgan('dev'));
         app.use(helmet());
     }

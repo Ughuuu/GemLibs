@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import tsc from 'gulp-typescript';
 import {path, tasks} from './const';
+var plumber = require('gulp-plumber');
 
 const TS_CONFIG = path.ROOT + 'tsconfig.json';
 

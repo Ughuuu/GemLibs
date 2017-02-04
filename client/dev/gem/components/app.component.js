@@ -10,11 +10,49 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require("@angular/core");
 const platform_browser_1 = require("@angular/platform-browser");
-const navbar_component_1 = require("./navbar.component");
+const material_1 = require("@angular/material");
+const app_constants_1 = require("../constants/app.constants");
+const login_component_1 = require("./login.component");
+const signup_component_1 = require("./signup.component");
+const router_1 = require("@angular/router");
 let AppComponent = class AppComponent {
-    constructor(titleService) {
+    constructor(router, titleService, dialog) {
+        this.router = router;
         this.titleService = titleService;
-        this.titleService.setTitle("GemLibs: Plugin Search");
+        this.dialog = dialog;
+        this.logo = app_constants_1.NavbarConstants.logoPNGSrc;
+        this.logotext = app_constants_1.NavbarConstants.homeButton;
+        this.searchbarDefault = app_constants_1.NavbarConstants.searchBarDefault;
+        this.install = app_constants_1.NavbarConstants.installButton;
+        this.feature = app_constants_1.NavbarConstants.featureButton;
+        this.signup = app_constants_1.NavbarConstants.signupButton;
+        this.login = app_constants_1.NavbarConstants.loginButton;
+        this.searchText = "";
+        if (window.location.pathname == '/login') {
+            this.logInAction();
+        }
+        else if (window.location.pathname == '/signup') {
+            this.signUpAction();
+        }
+        else {
+            this.homeAction();
+        }
+    }
+    searchAction() {
+        this.setTitle("GemLibs: Search");
+        this.router.navigate(['/search', this.searchText]);
+    }
+    homeAction() {
+        this.setTitle("GemLibs: Home");
+        this.router.navigateByUrl('/home');
+    }
+    signUpAction() {
+        this.setTitle("GemLibs: Sign Up");
+        this.dialog.open(signup_component_1.SignUpComponent);
+    }
+    logInAction() {
+        this.setTitle("GemLibs: Log In");
+        this.dialog.open(login_component_1.LoginComponent);
     }
     setTitle(newTitle) {
         this.titleService.setTitle(newTitle);
@@ -24,8 +62,9 @@ AppComponent = __decorate([
     core_1.Component({
         selector: 'app',
         templateUrl: 'gem/templates/app.html',
-        entryComponents: [navbar_component_1.NavbarComponent]
+        entryComponents: [login_component_1.LoginComponent, signup_component_1.SignUpComponent]
     }),
-    __metadata("design:paramtypes", [platform_browser_1.Title])
+    __metadata("design:paramtypes", [router_1.Router, platform_browser_1.Title, material_1.MdDialog])
 ], AppComponent);
 exports.AppComponent = AppComponent;
+//# sourceMappingURL=app.component.js.map

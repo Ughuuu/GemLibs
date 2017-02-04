@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const helmet = require("helmet");
 const compression = require("compression");
 var zlib = require('zlib');
-const app_constants_1 = require("../constants/app.constants");
+const app_const_1 = require("../constants/app.const");
 class RoutesConfig {
     static init(app) {
         let _root = process.cwd();
@@ -15,11 +15,13 @@ class RoutesConfig {
             threshold: '1kb'
         }));
         app.use(express.static(_root + _nodeModules));
-        app.use(express.static(_root + app_constants_1.AppConstants.clientFiles));
+        app.use(express.static(_root + app_const_1.AppConstants.clientFiles));
         app.use(bodyParser.json());
+        app.use(bodyParser.urlencoded({ extended: true }));
         app.use(morgan('dev'));
         app.use(helmet());
     }
 }
 exports.RoutesConfig = RoutesConfig;
 ;
+//# sourceMappingURL=routes.conf.js.map

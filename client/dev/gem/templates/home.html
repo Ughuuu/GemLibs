@@ -1,0 +1,38 @@
+<md-grid-list cols="12" [style.background]="'#8585cc'" rowHeight="256px">
+    <md-grid-tile colspan="12">
+        <span mdTooltip="Download">
+            <a md-button routerLink="/install">
+                <h1 style="display: inline;">Plugins For Gem Engine</h1>
+                <img src='{{logo}}' width="256" height="256">
+            </a>
+          </span>
+    </md-grid-tile>
+</md-grid-list>
+<md-grid-list cols="12" [style.background]="'#7A257C'" rowHeight="64px">
+    <md-grid-tile colspan="12">
+        <md-checkbox>
+            <h3>Search for plugins</h3></md-checkbox>
+    </md-grid-tile>
+    <md-grid-tile colspan="12">
+        <h3>Like This One:</h3>
+    </md-grid-tile>
+</md-grid-list>
+<md-grid-list cols="12" [style.background]="'#7A257C'" rowHeight="640px">
+    <md-grid-tile colspan="12">
+        <span mdTooltip="Editor Plugin">
+            <img src='./assets/editor.png'>
+        </span>
+    </md-grid-tile>
+</md-grid-list>
+<md-grid-list cols="12" [style.background]="'#8585cc'" rowHeight="64px">
+    <md-grid-tile colspan="12">
+        <span mdTooltip="Add your own!">
+        <a md-button (click)='logInAction()'>
+                <h3>Added by the community!</h3>
+        </a>
+            </span>
+    </md-grid-tile>
+    <md-grid-tile colspan="12">
+        <h3>Currently, there are over X plugins for you to download from!</h3>
+    </md-grid-tile>
+</md-grid-list>
