@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { NavbarConstants } from '../constants/app.constants';
+import { AppConstants } from '../constants/app.constants';
 
 @Component({
     selector: 'install',
     templateUrl: 'gem/templates/install.html'
 })
 export class InstallComponent {
-    logo: string = NavbarConstants.logoPNGSrc;
+    pink: string = AppConstants.pink;
+    purple: string = AppConstants.purple;
+    logo: string = AppConstants.logoPNGSrc;
     public constructor() {
     }
 

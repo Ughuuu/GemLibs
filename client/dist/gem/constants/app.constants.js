@@ -1,13 +1,1 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class NavbarConstants {
-}
-NavbarConstants.logoPNGSrc = "./favicon.png";
-NavbarConstants.logoSVGSrc = "./assets/gem-ico.svg";
-NavbarConstants.homeButton = "GemLibs";
-NavbarConstants.searchBarDefault = "Search";
-NavbarConstants.installButton = "Install";
-NavbarConstants.featureButton = "Features";
-NavbarConstants.signupButton = "Sign Up";
-NavbarConstants.loginButton = "Log In";
-exports.NavbarConstants = NavbarConstants;
+"use strict";function _classCallCheck(t,n){if(!(t instanceof n))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(exports,"__esModule",{value:!0});var AppConstants=function t(){_classCallCheck(this,t)};AppConstants.logoPNGSrc="./favicon.png",AppConstants.logoSVGSrc="./assets/gem-ico.svg",AppConstants.homeButton="GemLibs",AppConstants.searchBarDefault="Search",AppConstants.installButton="Install",AppConstants.featureButton="Features",AppConstants.signupButton="Sign Up",AppConstants.loginButton="Log In",AppConstants.purple="#311b92",AppConstants.pink="#e91e63",AppConstants.blue="#424242",exports.AppConstants=AppConstants;

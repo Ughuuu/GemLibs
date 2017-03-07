@@ -1,11 +1,1 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class Message {
-    constructor(id, title, content, createdAt) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-        this.createdAt = createdAt;
-    }
-}
-exports.Message = Message;
+"use strict";function _classCallCheck(e,s){if(!(e instanceof s))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(exports,"__esModule",{value:!0});var Message=function e(s,t,a,c){_classCallCheck(this,e),this.id=s,this.title=t,this.content=a,this.createdAt=c};exports.Message=Message;

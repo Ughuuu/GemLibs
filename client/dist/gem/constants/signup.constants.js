@@ -1,8 +1,1 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class SignupConstants {
-}
-SignupConstants.userPlacehoder = "Username";
-SignupConstants.emailPlacehoder = "Email";
-SignupConstants.passwordPlaceholder = "Password";
-exports.SignupConstants = SignupConstants;
+"use strict";function _classCallCheck(s,n){if(!(s instanceof n))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(exports,"__esModule",{value:!0});var SignupConstants=function s(){_classCallCheck(this,s)};SignupConstants.userPlacehoder="Username",SignupConstants.emailPlacehoder="Email",SignupConstants.passwordPlaceholder="Password",exports.SignupConstants=SignupConstants;

@@ -1,13 +1,1 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class Plugin {
-    constructor(id, name, version, createdAt, content, username) {
-        this.id = id;
-        this.name = name;
-        this.version = version;
-        this.createdAt = createdAt;
-        this.content = content;
-        this.username = username;
-    }
-}
-exports.Plugin = Plugin;
+"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(exports,"__esModule",{value:!0});var Plugin=function e(t,s,n,i,a){_classCallCheck(this,e),this.name=t,this.content=s,this.version=n,this.createdAt=i,this.username=a};exports.Plugin=Plugin;
