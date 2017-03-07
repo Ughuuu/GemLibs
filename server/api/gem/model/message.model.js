@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const database_conf_1 = require("../../../config/database.conf");
 var moment = require('moment');
 function default_1(orm, db) {
@@ -84,6 +85,5 @@ function default_1(orm, db) {
     });
     Model.hasOne('user', db.models.user, { required: true });
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = default_1;
 ;

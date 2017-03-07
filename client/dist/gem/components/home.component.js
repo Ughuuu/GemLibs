@@ -1,1 +1,52 @@
-"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var _createClass=function(){function e(e,t){for(var o=0;o<t.length;o++){var n=t[o];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,o,n){return o&&e(t.prototype,o),n&&e(t,n),t}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},__decorate=function(e,t,o,n){var r,i=arguments.length,a=i<3?t:null===n?n=Object.getOwnPropertyDescriptor(t,o):n;if("object"===("undefined"==typeof Reflect?"undefined":_typeof(Reflect))&&"function"==typeof Reflect.decorate)a=Reflect.decorate(e,t,o,n);else for(var l=e.length-1;l>=0;l--)(r=e[l])&&(a=(i<3?r(a):i>3?r(t,o,a):r(t,o))||a);return i>3&&a&&Object.defineProperty(t,o,a),a},__metadata=function(e,t){if("object"===("undefined"==typeof Reflect?"undefined":_typeof(Reflect))&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},core_1=require("@angular/core"),app_constants_1=require("../constants/app.constants"),login_component_1=require("./login.component"),signup_component_1=require("./signup.component"),platform_browser_1=require("@angular/platform-browser"),material_1=require("@angular/material"),router_1=require("@angular/router"),HomeComponent=function(){function e(t,o,n){_classCallCheck(this,e),this.router=t,this.titleService=o,this.dialog=n,this.logo=app_constants_1.NavbarConstants.logoPNGSrc,"/login"==window.location.pathname?this.logInAction():"/signup"==window.location.pathname&&this.signUpAction()}return _createClass(e,[{key:"signUpAction",value:function(){this.setTitle("GemLibs: Sign Up"),this.dialog.open(signup_component_1.SignUpComponent)}},{key:"logInAction",value:function(){this.setTitle("GemLibs: Log In"),this.dialog.open(login_component_1.LoginComponent)}},{key:"setTitle",value:function(e){this.titleService.setTitle(e)}}]),e}();HomeComponent=__decorate([core_1.Component({selector:"home",templateUrl:"gem/templates/home.html",entryComponents:[login_component_1.LoginComponent,signup_component_1.SignUpComponent]}),__metadata("design:paramtypes",[router_1.Router,platform_browser_1.Title,material_1.MdDialog])],HomeComponent),exports.HomeComponent=HomeComponent;
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = require("@angular/core");
+const app_constants_1 = require("../constants/app.constants");
+const login_component_1 = require("./login.component");
+const signup_component_1 = require("./signup.component");
+const platform_browser_1 = require("@angular/platform-browser");
+const material_1 = require("@angular/material");
+const router_1 = require("@angular/router");
+let HomeComponent = class HomeComponent {
+    constructor(router, titleService, dialog) {
+        this.router = router;
+        this.titleService = titleService;
+        this.dialog = dialog;
+        this.logo = app_constants_1.NavbarConstants.logoPNGSrc;
+        if (window.location.pathname == '/login') {
+            this.logInAction();
+        }
+        else if (window.location.pathname == '/signup') {
+            this.signUpAction();
+        }
+    }
+    signUpAction() {
+        this.setTitle("GemLibs: Sign Up");
+        this.dialog.open(signup_component_1.SignUpComponent);
+    }
+    logInAction() {
+        this.setTitle("GemLibs: Log In");
+        this.dialog.open(login_component_1.LoginComponent);
+    }
+    setTitle(newTitle) {
+        this.titleService.setTitle(newTitle);
+    }
+};
+HomeComponent = __decorate([
+    core_1.Component({
+        selector: 'home',
+        templateUrl: 'gem/templates/home.html',
+        entryComponents: [login_component_1.LoginComponent, signup_component_1.SignUpComponent]
+    }),
+    __metadata("design:paramtypes", [router_1.Router, platform_browser_1.Title, material_1.MdDialog])
+], HomeComponent);
+exports.HomeComponent = HomeComponent;

@@ -8,9 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
+const app_constants_1 = require("../constants/app.constants");
 let FeaturesComponent = class FeaturesComponent {
     constructor() {
+        this.pink = app_constants_1.AppConstants.pink;
+        this.purple = app_constants_1.AppConstants.purple;
     }
 };
 FeaturesComponent = __decorate([

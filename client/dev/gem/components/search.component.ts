@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppConstants } from '../constants/app.constants';
+import { PluginService } from '../services/plugin.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Plugin } from '../models/plugin.model';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
@@ -9,22 +11,15 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 })
 export class SearchComponent implements OnInit {
   private searchUrl: string = '/search';
+  private searchText: string = '';
+  pink: string = AppConstants.pink;
+  purple: string = AppConstants.purple;
   plugins: Plugin[] = [];
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private http: Http
-  ) {
-    for (var j = 0; j < 10; j++) {
-      var plug = new Plugin(1, 'Best Plugin 123', '1.0.0', new Date(), 'This is my plugin.', 'user1')
-      var str = '';
-      for (var i = 0; i < 300; i++) {
-        str += 'a';
-      }
-      plug.content = str;
-      this.plugins.push(plug);
-    }
+    private http: Http) {
   }
 
   ngOnInit() {
@@ -32,16 +27,15 @@ export class SearchComponent implements OnInit {
       .subscribe((params: Params) => this.getAll(params['plugin']));
   }
 
+  getPlugins(arr){
+    console.log(arr[0]);
+    this.plugins = arr;
+    //for(i=0;i<arr.)
+  }
+
   getAll(searchText: string) {
-    console.log(this.searchUrl + '?searchText=' + searchText+'');
-    this.http.get(this.searchUrl + '?searchText=' + searchText+'').subscribe(res => console.log(res));
-    //.subscribe(res => {
-    //  this.messages = JSON.parse(res.text());
-    //  if (this.messages[0] == 'Success') {
-    //    this.dialog.closeAll();
-    //    this.router.navigateByUrl('/home');
-    //  }
-    //});
+    this.searchText = searchText;
+    this.http.get(this.searchUrl + '?searchText=' + searchText+'').subscribe(res => this.getPlugins(JSON.parse(res.text())));
   }
   /*
   todos: Plugin[] = [];

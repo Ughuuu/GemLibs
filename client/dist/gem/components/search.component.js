@@ -1,1 +1,58 @@
-"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var _createClass=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},__decorate=function(e,t,r,n){var o,a=arguments.length,c=a<3?t:null===n?n=Object.getOwnPropertyDescriptor(t,r):n;if("object"===("undefined"==typeof Reflect?"undefined":_typeof(Reflect))&&"function"==typeof Reflect.decorate)c=Reflect.decorate(e,t,r,n);else for(var l=e.length-1;l>=0;l--)(o=e[l])&&(c=(a<3?o(c):a>3?o(t,r,c):o(t,r))||c);return a>3&&c&&Object.defineProperty(t,r,c),c},__metadata=function(e,t){if("object"===("undefined"==typeof Reflect?"undefined":_typeof(Reflect))&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},core_1=require("@angular/core"),router_1=require("@angular/router"),plugin_model_1=require("../models/plugin.model"),http_1=require("@angular/http"),SearchComponent=function(){function e(t,r,n){_classCallCheck(this,e),this.route=t,this.router=r,this.http=n,this.searchUrl="/search",this.plugins=[];for(var o=0;o<10;o++){for(var a=new plugin_model_1.Plugin(1,"Best Plugin 123","1.0.0",new Date,"This is my plugin.","user1"),c="",l=0;l<300;l++)c+="a";a.content=c,this.plugins.push(a)}}return _createClass(e,[{key:"ngOnInit",value:function(){var e=this;this.route.params.subscribe(function(t){return e.getAll(t.plugin)})}},{key:"getAll",value:function(e){console.log(this.searchUrl+"?searchText="+e),this.http.get(this.searchUrl+"?searchText="+e).subscribe(function(e){return console.log(e)})}}]),e}();SearchComponent=__decorate([core_1.Component({selector:"search",templateUrl:"gem/templates/search.html"}),__metadata("design:paramtypes",[router_1.ActivatedRoute,router_1.Router,http_1.Http])],SearchComponent),exports.SearchComponent=SearchComponent;
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = require("@angular/core");
+const router_1 = require("@angular/router");
+const plugin_model_1 = require("../models/plugin.model");
+const http_1 = require("@angular/http");
+let SearchComponent = class SearchComponent {
+    constructor(route, router, http) {
+        this.route = route;
+        this.router = router;
+        this.http = http;
+        this.searchUrl = '/search';
+        this.plugins = [];
+        for (var j = 0; j < 10; j++) {
+            var plug = new plugin_model_1.Plugin(1, 'Best Plugin 123', '1.0.0', new Date(), 'This is my plugin.', 'user1');
+            var str = '';
+            for (var i = 0; i < 300; i++) {
+                str += 'a';
+            }
+            plug.content = str;
+            this.plugins.push(plug);
+        }
+    }
+    ngOnInit() {
+        this.route.params
+            .subscribe((params) => this.getAll(params['plugin']));
+    }
+    getAll(searchText) {
+        console.log(this.searchUrl + '?searchText=' + searchText + '');
+        this.http.get(this.searchUrl + '?searchText=' + searchText + '').subscribe(res => console.log(res));
+        //.subscribe(res => {
+        //  this.messages = JSON.parse(res.text());
+        //  if (this.messages[0] == 'Success') {
+        //    this.dialog.closeAll();
+        //    this.router.navigateByUrl('/home');
+        //  }
+        //});
+    }
+};
+SearchComponent = __decorate([
+    core_1.Component({
+        selector: 'search',
+        templateUrl: 'gem/templates/search.html'
+    }),
+    __metadata("design:paramtypes", [router_1.ActivatedRoute,
+        router_1.Router,
+        http_1.Http])
+], SearchComponent);
+exports.SearchComponent = SearchComponent;

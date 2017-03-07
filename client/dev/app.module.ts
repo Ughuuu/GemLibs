@@ -7,6 +7,7 @@ import 'hammerjs';
 import { MaterialModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 // Components
 import { PluginComponent } from './gem/components/plugin.component';
 import { AppComponent } from './gem/components/app.component';
@@ -29,6 +30,7 @@ import 'rxjs/add/operator/switchMap';
 @NgModule({
   imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,

@@ -16,32 +16,30 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class PluginService {
-  static ENDPOINT: string = '/api/gem/:id';
+  static ENDPOINT: string = '/plugin/:text';
 
-  constructor(@Inject(Http) private _http: Http) {
+  constructor(@Inject(Http) private http: Http) {
 
   }
 
-  getAll():Observable<any> {
-    return this._http
-               .get(PluginService.ENDPOINT.replace(':id', ''))
-               .map((r) => r!=null ? r.json() : "");
+  get(text: string):Observable<any> {
+    return this.http
+               .get(PluginService.ENDPOINT.replace(':text', text))
+               .map((res) => res!=null ? JSON.parse(res.text()) : null);
   }
 
-  add(message:string):Observable<any> {
-    let _messageStringified = JSON.stringify({todoMessage: message});
-
+  add(plugin):Observable<any> {
     let headers = new Headers();
 
     headers.append('Content-Type', 'application/json');
 
-    return this._http
-               .post(PluginService.ENDPOINT.replace(':id', ''), _messageStringified, {headers})
+    return this.http
+               .post(PluginService.ENDPOINT.replace(':id', ''), JSON.stringify(plugin), {headers})
                .map((r) => r.json());
   }
 
   remove(id: string):Observable<any> {
-    return this._http
+    return this.http
                .delete(PluginService.ENDPOINT.replace(':id', id));
   }
 }

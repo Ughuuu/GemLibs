@@ -25,11 +25,20 @@ export default function (orm, db) {
                 rejected(err);
                 return;
               }
-              done({
-                name: plugin.name,
-                content: msg.content,
-                version: plugin.version,
-              })
+              msg.getUser((err, user) =>{
+                if (err) {
+                  console.log(err);
+                  rejected(err);
+                  return;
+                }
+                done({
+                  name: plugin.name,
+                  content: msg.content,
+                  version: plugin.version,
+                  createdAt: plugin.createdAt,
+                  username: user.username
+                });
+              });
             })
           });
         }

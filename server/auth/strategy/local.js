@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const strategy = require('passport-local').Strategy;
 const database_conf_1 = require("../../config/database.conf");
 var passport = require('passport');

@@ -8,11 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const app_constants_1 = require("../constants/app.constants");
 let InstallComponent = class InstallComponent {
     constructor() {
-        this.logo = app_constants_1.NavbarConstants.logoPNGSrc;
+        this.pink = app_constants_1.AppConstants.pink;
+        this.purple = app_constants_1.AppConstants.purple;
+        this.logo = app_constants_1.AppConstants.logoPNGSrc;
     }
     sourcePage() {
         window.open('https://github.com/Ughuuu/GemMaker');

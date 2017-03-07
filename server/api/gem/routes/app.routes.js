@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const index_1 = require("../../../auth/index");
 const auth_routes_1 = require("./auth.routes");
 const public_routes_1 = require("./public.routes");

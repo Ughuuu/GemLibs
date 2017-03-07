@@ -1,11 +1,11 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 class Plugin {
-    constructor(id, name, version, createdAt, content, username) {
-        this.id = id;
+    constructor(name, content, version, createdAt, username) {
         this.name = name;
+        this.content = content;
         this.version = version;
         this.createdAt = createdAt;
-        this.content = content;
         this.username = username;
     }
 }

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const database_conf_1 = require("./database.conf");
 const routes_conf_1 = require("./routes.conf");
 const database_const_1 = require("../constants/database.const");

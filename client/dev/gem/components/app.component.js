@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const platform_browser_1 = require("@angular/platform-browser");
 const material_1 = require("@angular/material");
@@ -20,13 +21,14 @@ let AppComponent = class AppComponent {
         this.router = router;
         this.titleService = titleService;
         this.dialog = dialog;
-        this.logo = app_constants_1.NavbarConstants.logoPNGSrc;
-        this.logotext = app_constants_1.NavbarConstants.homeButton;
-        this.searchbarDefault = app_constants_1.NavbarConstants.searchBarDefault;
-        this.install = app_constants_1.NavbarConstants.installButton;
-        this.feature = app_constants_1.NavbarConstants.featureButton;
-        this.signup = app_constants_1.NavbarConstants.signupButton;
-        this.login = app_constants_1.NavbarConstants.loginButton;
+        this.blue = app_constants_1.AppConstants.blue;
+        this.logo = app_constants_1.AppConstants.logoPNGSrc;
+        this.logotext = app_constants_1.AppConstants.homeButton;
+        this.searchbarDefault = app_constants_1.AppConstants.searchBarDefault;
+        this.install = app_constants_1.AppConstants.installButton;
+        this.feature = app_constants_1.AppConstants.featureButton;
+        this.signup = app_constants_1.AppConstants.signupButton;
+        this.login = app_constants_1.AppConstants.loginButton;
         this.searchText = "";
         if (window.location.pathname == '/login') {
             this.logInAction();
@@ -35,7 +37,7 @@ let AppComponent = class AppComponent {
             this.signUpAction();
         }
         else {
-            this.homeAction();
+            this.router.navigateByUrl(window.location.pathname);
         }
     }
     searchAction() {
@@ -56,6 +58,9 @@ let AppComponent = class AppComponent {
     }
     setTitle(newTitle) {
         this.titleService.setTitle(newTitle);
+    }
+    isMobile() {
+        return window.innerWidth < 800;
     }
 };
 AppComponent = __decorate([

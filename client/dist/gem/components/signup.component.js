@@ -1,1 +1,54 @@
-"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var _createClass=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},__decorate=function(e,t,n,o){var r,s=arguments.length,a=s<3?t:null===o?o=Object.getOwnPropertyDescriptor(t,n):o;if("object"===("undefined"==typeof Reflect?"undefined":_typeof(Reflect))&&"function"==typeof Reflect.decorate)a=Reflect.decorate(e,t,n,o);else for(var i=e.length-1;i>=0;i--)(r=e[i])&&(a=(s<3?r(a):s>3?r(t,n,a):r(t,n))||a);return s>3&&a&&Object.defineProperty(t,n,a),a},__metadata=function(e,t){if("object"===("undefined"==typeof Reflect?"undefined":_typeof(Reflect))&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},signup_constants_1=require("../constants/signup.constants"),core_1=require("@angular/core"),material_1=require("@angular/material"),forms_1=require("@angular/forms"),login_component_1=require("./login.component"),http_1=require("@angular/http"),SignUpComponent=function(){function e(t,n,o){_classCallCheck(this,e),this.http=t,this.dialog=n,this.fb=o,this.signupUrl="/signup",this.form=this.fb.group({username:["",forms_1.Validators.required],password:["",forms_1.Validators.required],email:["",forms_1.Validators.required]}),this.emailPlaceholder=signup_constants_1.SignupConstants.emailPlacehoder,this.userPlaceholder=signup_constants_1.SignupConstants.userPlacehoder,this.passwordPlaceholder=signup_constants_1.SignupConstants.passwordPlaceholder}return _createClass(e,[{key:"doSubmit",value:function(){var e=this,t=new http_1.Headers({"Content-Type":"application/json"}),n=new http_1.RequestOptions({headers:t});this.http.post(this.signupUrl,JSON.stringify(this.form.value),n).subscribe(function(t){e.messages=JSON.parse(t.text()),"Success"==e.messages[0]&&(e.dialog.closeAll(),e.dialog.open(login_component_1.LoginComponent))})}}]),e}();SignUpComponent=__decorate([core_1.Component({selector:"signup",templateUrl:"gem/templates/signup.html",entryComponents:[login_component_1.LoginComponent]}),__metadata("design:paramtypes",[http_1.Http,material_1.MdDialog,forms_1.FormBuilder])],SignUpComponent),exports.SignUpComponent=SignUpComponent;
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const signup_constants_1 = require("../constants/signup.constants");
+const core_1 = require("@angular/core");
+const material_1 = require("@angular/material");
+const forms_1 = require("@angular/forms");
+const login_component_1 = require("./login.component");
+const http_1 = require("@angular/http");
+let SignUpComponent = class SignUpComponent {
+    constructor(http, dialog, fb) {
+        this.http = http;
+        this.dialog = dialog;
+        this.fb = fb;
+        this.signupUrl = '/signup';
+        this.form = this.fb.group({
+            username: ["", forms_1.Validators.required],
+            password: ["", forms_1.Validators.required],
+            email: ["", forms_1.Validators.required]
+        });
+        this.emailPlaceholder = signup_constants_1.SignupConstants.emailPlacehoder;
+        this.userPlaceholder = signup_constants_1.SignupConstants.userPlacehoder;
+        this.passwordPlaceholder = signup_constants_1.SignupConstants.passwordPlaceholder;
+    }
+    doSubmit() {
+        let headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        let options = new http_1.RequestOptions({ headers: headers });
+        this.http.post(this.signupUrl, JSON.stringify(this.form.value), options)
+            .subscribe(res => {
+            this.messages = JSON.parse(res.text());
+            if (this.messages[0] == 'Success') {
+                this.dialog.closeAll();
+                this.dialog.open(login_component_1.LoginComponent);
+            }
+        });
+    }
+};
+SignUpComponent = __decorate([
+    core_1.Component({
+        selector: 'signup',
+        templateUrl: 'gem/templates/signup.html',
+        entryComponents: [login_component_1.LoginComponent]
+    }),
+    __metadata("design:paramtypes", [http_1.Http, material_1.MdDialog, forms_1.FormBuilder])
+], SignUpComponent);
+exports.SignUpComponent = SignUpComponent;

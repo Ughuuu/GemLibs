@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const index_1 = require("../api/gem/model/index");
 var orm = require('orm');
 var bcrypt = require('bcrypt-nodejs');
@@ -12,7 +13,6 @@ class DataBaseConfig {
             }
             user.createMessage('title', 'content')
                 .then(msg => msg.createPlugin('AAA', '1.2.3'))
-                .then()
                 .catch(console.log);
             console.log('Message Table synced.');
         });

@@ -1,4 +1,5 @@
 'use strict';
+Object.defineProperty(exports, "__esModule", { value: true });
 if (process.env.NODE_ENV === 'production')
     require('newrelic');
 const app_const_1 = require("./constants/app.const");

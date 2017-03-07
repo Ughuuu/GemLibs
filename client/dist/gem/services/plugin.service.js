@@ -1,1 +1,47 @@
-"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var _createClass=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},__decorate=function(e,t,n,r){var o,i=arguments.length,a=i<3?t:null===r?r=Object.getOwnPropertyDescriptor(t,n):r;if("object"===("undefined"==typeof Reflect?"undefined":_typeof(Reflect))&&"function"==typeof Reflect.decorate)a=Reflect.decorate(e,t,n,r);else for(var c=e.length-1;c>=0;c--)(o=e[c])&&(a=(i<3?o(a):i>3?o(t,n,a):o(t,n))||a);return i>3&&a&&Object.defineProperty(t,n,a),a},__metadata=function(e,t){if("object"===("undefined"==typeof Reflect?"undefined":_typeof(Reflect))&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},__param=function(e,t){return function(n,r){t(n,r,e)}},core_1=require("@angular/core"),http_1=require("@angular/http");require("rxjs/add/operator/map");var PluginService=PluginService_1=function(){function e(t){_classCallCheck(this,e),this._http=t}return _createClass(e,[{key:"getAll",value:function(){return this._http.get(PluginService_1.ENDPOINT.replace(":id","")).map(function(e){return null!=e?e.json():""})}},{key:"add",value:function(e){var t=JSON.stringify({todoMessage:e}),n=new http_1.Headers;return n.append("Content-Type","application/json"),this._http.post(PluginService_1.ENDPOINT.replace(":id",""),t,{headers:n}).map(function(e){return e.json()})}},{key:"remove",value:function(e){return this._http.delete(PluginService_1.ENDPOINT.replace(":id",e))}}]),e}();PluginService.ENDPOINT="/api/gem/:id",PluginService=PluginService_1=__decorate([core_1.Injectable(),__param(0,core_1.Inject(http_1.Http)),__metadata("design:paramtypes",[http_1.Http])],PluginService),exports.PluginService=PluginService;var PluginService_1;
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = require("@angular/core");
+const http_1 = require("@angular/http");
+require("rxjs/add/operator/map");
+let PluginService = PluginService_1 = class PluginService {
+    constructor(_http) {
+        this._http = _http;
+    }
+    getAll() {
+        return this._http
+            .get(PluginService_1.ENDPOINT.replace(':id', ''))
+            .map((r) => r != null ? r.json() : "");
+    }
+    add(message) {
+        let _messageStringified = JSON.stringify({ todoMessage: message });
+        let headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this._http
+            .post(PluginService_1.ENDPOINT.replace(':id', ''), _messageStringified, { headers })
+            .map((r) => r.json());
+    }
+    remove(id) {
+        return this._http
+            .delete(PluginService_1.ENDPOINT.replace(':id', id));
+    }
+};
+PluginService.ENDPOINT = '/api/gem/:id';
+PluginService = PluginService_1 = __decorate([
+    core_1.Injectable(),
+    __param(0, core_1.Inject(http_1.Http)),
+    __metadata("design:paramtypes", [http_1.Http])
+], PluginService);
+exports.PluginService = PluginService;
+var PluginService_1;

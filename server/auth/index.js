@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const app_const_1 = require("../constants/app.const");
 const database_const_1 = require("../constants/database.const");
 var passport = require('passport');

@@ -16,7 +16,7 @@ export class PublicRoutes {
           console.log(err);
           return;
         }
-        var n = plugins.len;
+        var n = plugins.length;
         var acumulator = [];
         var acumulatorFunction = function (msg) {
           acumulator.push(msg);

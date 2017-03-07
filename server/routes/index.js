@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const app_routes_1 = require("../api/gem/routes/app.routes");
 const app_const_1 = require("../constants/app.const");
 class Router {

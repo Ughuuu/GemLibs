@@ -6,8 +6,8 @@ import Message from './message.model';
 import Role from './role.model';
 
 export default function (orm, db) {
-    Plugin(orm, db);
+    Role(orm, db);
     User(orm, db);
     Message(orm, db);
-    Role(orm, db);
+    Plugin(orm, db);
 };

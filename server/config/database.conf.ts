@@ -17,7 +17,6 @@ export class DataBaseConfig {
       }
       user.createMessage('title', 'content')
         .then(msg => msg.createPlugin('AAA', '1.2.3'))
-        .then()
         .catch(console.log);
       console.log('Message Table synced.');
     });

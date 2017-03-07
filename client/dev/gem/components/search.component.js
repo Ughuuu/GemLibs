@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
+const app_constants_1 = require("../constants/app.constants");
 const router_1 = require("@angular/router");
-const plugin_model_1 = require("../models/plugin.model");
 const http_1 = require("@angular/http");
 let SearchComponent = class SearchComponent {
     constructor(route, router, http) {
@@ -18,31 +19,23 @@ let SearchComponent = class SearchComponent {
         this.router = router;
         this.http = http;
         this.searchUrl = '/search';
+        this.searchText = '';
+        this.pink = app_constants_1.AppConstants.pink;
+        this.purple = app_constants_1.AppConstants.purple;
         this.plugins = [];
-        for (var j = 0; j < 10; j++) {
-            var plug = new plugin_model_1.Plugin(1, 'Best Plugin 123', '1.0.0', new Date(), 'This is my plugin.', 'user1');
-            var str = '';
-            for (var i = 0; i < 300; i++) {
-                str += 'a';
-            }
-            plug.content = str;
-            this.plugins.push(plug);
-        }
     }
     ngOnInit() {
         this.route.params
             .subscribe((params) => this.getAll(params['plugin']));
     }
+    getPlugins(arr) {
+        console.log(arr[0]);
+        this.plugins = arr;
+        //for(i=0;i<arr.)
+    }
     getAll(searchText) {
-        console.log(this.searchUrl + '?searchText=' + searchText + '');
-        this.http.get(this.searchUrl + '?searchText=' + searchText + '').subscribe(res => console.log(res));
-        //.subscribe(res => {
-        //  this.messages = JSON.parse(res.text());
-        //  if (this.messages[0] == 'Success') {
-        //    this.dialog.closeAll();
-        //    this.router.navigateByUrl('/home');
-        //  }
-        //});
+        this.searchText = searchText;
+        this.http.get(this.searchUrl + '?searchText=' + searchText + '').subscribe(res => this.getPlugins(JSON.parse(res.text())));
     }
 };
 SearchComponent = __decorate([

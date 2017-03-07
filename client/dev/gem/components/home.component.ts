@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavbarConstants } from '../constants/app.constants';
+import { AppConstants } from '../constants/app.constants';
 import { LoginComponent } from './login.component';
 import { SignUpComponent } from './signup.component';
 import { Title } from '@angular/platform-browser';
@@ -12,7 +12,9 @@ import { Router } from '@angular/router';
     entryComponents: [LoginComponent, SignUpComponent]
 })
 export class HomeComponent {
-    logo: string = NavbarConstants.logoPNGSrc;
+    pink: string = AppConstants.pink;
+    purple: string = AppConstants.purple;
+    logo: string = AppConstants.logoPNGSrc;
 
     public constructor(private router: Router, private titleService: Title, public dialog: MdDialog) {
         if(window.location.pathname == '/login'){

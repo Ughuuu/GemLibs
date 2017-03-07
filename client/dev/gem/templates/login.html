@@ -3,10 +3,10 @@
 </h1>
 <form novalidate style="width: 100%" [formGroup]="form">
     <md-input-container style="width: 100%;">
-        <input md-input placeholder="{{userPlaceholder}}" formControlName="username" type="text" (keyup.enter)='doSubmit()' />
+        <input mdInput placeholder="{{userPlaceholder}}" formControlName="username" type="text" (keyup.enter)='doSubmit()' />
     </md-input-container>
     <md-input-container style="width: 100%;">
-        <input md-input placeholder="{{passwordPlaceholder}}" formControlName="password" type="password" (keyup.enter)='doSubmit()' />
+        <input mdInput placeholder="{{passwordPlaceholder}}" formControlName="password" type="password" (keyup.enter)='doSubmit()' />
     </md-input-container>
     <button type="button" md-raised-button [disabled]="!form.valid" autofill style="width: 100%;" (click)="doSubmit()">
         Submit

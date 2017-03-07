@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const plugin_component_1 = require("../../gem/components/plugin.component");
 const install_component_1 = require("../../gem/components/install.component");
 const features_component_1 = require("../../gem/components/features.component");

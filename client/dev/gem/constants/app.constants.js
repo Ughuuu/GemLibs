@@ -1,12 +1,16 @@
 "use strict";
-class NavbarConstants {
+Object.defineProperty(exports, "__esModule", { value: true });
+class AppConstants {
 }
-NavbarConstants.logoPNGSrc = "./favicon.png";
-NavbarConstants.logoSVGSrc = "./assets/gem-ico.svg";
-NavbarConstants.homeButton = "GemLibs";
-NavbarConstants.searchBarDefault = "Search";
-NavbarConstants.installButton = "Install";
-NavbarConstants.featureButton = "Features";
-NavbarConstants.signupButton = "Sign Up";
-NavbarConstants.loginButton = "Log In";
-exports.NavbarConstants = NavbarConstants;
+AppConstants.logoPNGSrc = "./favicon.png";
+AppConstants.logoSVGSrc = "./assets/gem-ico.svg";
+AppConstants.homeButton = "GemLibs";
+AppConstants.searchBarDefault = "Search";
+AppConstants.installButton = "Install";
+AppConstants.featureButton = "Features";
+AppConstants.signupButton = "Sign Up";
+AppConstants.loginButton = "Log In";
+AppConstants.purple = "#311b92";
+AppConstants.pink = "#e91e63";
+AppConstants.blue = '#424242';
+exports.AppConstants = AppConstants;

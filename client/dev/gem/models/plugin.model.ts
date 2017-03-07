@@ -1,8 +1,8 @@
 export class Plugin {
-    constructor(public id: number,
+    constructor(
         public name: string,
+        public content: string,
         public version: string,
         public createdAt: Date,
-        public content: string,
         public username: string) { }
 }

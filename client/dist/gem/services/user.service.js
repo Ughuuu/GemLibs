@@ -1,1 +1,47 @@
-"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var _createClass=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},__decorate=function(e,t,n,r){var o,a=arguments.length,u=a<3?t:null===r?r=Object.getOwnPropertyDescriptor(t,n):r;if("object"===("undefined"==typeof Reflect?"undefined":_typeof(Reflect))&&"function"==typeof Reflect.decorate)u=Reflect.decorate(e,t,n,r);else for(var i=e.length-1;i>=0;i--)(o=e[i])&&(u=(a<3?o(u):a>3?o(t,n,u):o(t,n))||u);return a>3&&u&&Object.defineProperty(t,n,u),u},__metadata=function(e,t){if("object"===("undefined"==typeof Reflect?"undefined":_typeof(Reflect))&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},core_1=require("@angular/core"),http_1=require("@angular/http"),UserService=function(){function e(t){_classCallCheck(this,e),this.http=t}return _createClass(e,[{key:"getAll",value:function(){return this.http.get("/api/users",this.jwt()).map(function(e){return e.json()})}},{key:"getById",value:function(e){return this.http.get("/api/users/"+e,this.jwt()).map(function(e){return e.json()})}},{key:"create",value:function(e){return this.http.post("/api/users",e,this.jwt()).map(function(e){return e.json()})}},{key:"update",value:function(e){return this.http.put("/api/users/"+e.id,e,this.jwt()).map(function(e){return e.json()})}},{key:"delete",value:function(e){return this.http.delete("/api/users/"+e,this.jwt()).map(function(e){return e.json()})}},{key:"jwt",value:function(){var e=JSON.parse(localStorage.getItem("currentUser"));if(e&&e.token){var t=new http_1.Headers({Authorization:"Bearer "+e.token});return new http_1.RequestOptions({headers:t})}}}]),e}();UserService=__decorate([core_1.Injectable(),__metadata("design:paramtypes",[http_1.Http])],UserService),exports.UserService=UserService;
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = require("@angular/core");
+const http_1 = require("@angular/http");
+let UserService = class UserService {
+    constructor(http) {
+        this.http = http;
+    }
+    getAll() {
+        return this.http.get('/api/users', this.jwt()).map((response) => response.json());
+    }
+    getById(id) {
+        return this.http.get('/api/users/' + id, this.jwt()).map((response) => response.json());
+    }
+    create(user) {
+        return this.http.post('/api/users', user, this.jwt()).map((response) => response.json());
+    }
+    update(user) {
+        return this.http.put('/api/users/' + user.id, user, this.jwt()).map((response) => response.json());
+    }
+    delete(id) {
+        return this.http.delete('/api/users/' + id, this.jwt()).map((response) => response.json());
+    }
+    // private helper methods
+    jwt() {
+        // create authorization header with jwt token
+        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (currentUser && currentUser.token) {
+            let headers = new http_1.Headers({ 'Authorization': 'Bearer ' + currentUser.token });
+            return new http_1.RequestOptions({ headers: headers });
+        }
+    }
+};
+UserService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], UserService);
+exports.UserService = UserService;

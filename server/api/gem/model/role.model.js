@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const database_conf_1 = require("../../../config/database.conf");
 function default_1(orm, db) {
     db.define('role', {
@@ -43,6 +44,5 @@ function default_1(orm, db) {
         }
     });
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = default_1;
 ;
